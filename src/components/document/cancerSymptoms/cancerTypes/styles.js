@@ -50,6 +50,27 @@ const Close = styled.span`
   font-size: 4rem;
 `
 
+const Title = styled.div`
+  width: 70%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+`
+
+const Symps = styled.div`
+  width: 100%;
+  height: 75%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
 export {
   Container,
   Num,
@@ -57,4 +78,6 @@ export {
   SymptomContainer,
   Overlay,
   Close,
+  Title, 
+  Symps
 }

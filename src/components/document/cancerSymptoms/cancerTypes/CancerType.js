@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 
-import { Container , Num , Text , SymptomContainer , Overlay, Close } from './styles';
+import { Container , Num , Text , SymptomContainer , Overlay, Close, Title , Symps } from './styles';
 import { Brown , Yellow , Blue } from '../../../colors';
 
 import { translate } from '../../../translator';
@@ -18,7 +18,7 @@ class CancerType extends Component {
   }
 
   getMascFem = () => {
-    if (this.props.name.substr(-1) == 'a') {
+    if (this.props.name == 'Leucemia') {
       return 'a'
     } else {
       return 'o'
@@ -33,7 +33,16 @@ class CancerType extends Component {
       <>
         <Overlay />
         <SymptomContainer>
-            <Close onClick={this.toggleSymptoms}>&#215;</Close>
+          <Close onClick={this.toggleSymptoms}>&#215;</Close>
+          <Title>
+            <span>
+            <Blue>Sintomas</Blue>&nbsp;
+            <Brown>d{this.getMascFem()}</Brown>&nbsp;
+            <Yellow>{this.props.name}</Yellow>
+            <Brown>:</Brown>
+            </span>
+          </Title>
+          <Symps>
           {
             this.props.symptoms.map((symp, index) => {
               return (
@@ -48,6 +57,7 @@ class CancerType extends Component {
               )
             })
           }
+          </Symps>
         </SymptomContainer>
       </>
       }

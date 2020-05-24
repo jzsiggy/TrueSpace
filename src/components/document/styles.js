@@ -71,8 +71,6 @@ const SymptomContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
-  overflow-y: scroll;
 `
 
 const Close = styled.span`
@@ -83,11 +81,34 @@ const Close = styled.span`
   font-size: 4rem;
 `
 
+const Title = styled.div`
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+`
+
+const Symps = styled.div`
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
 export {
   SectionContainer,
   NavContainer,
   Back,
   SymptomContainer,
   Overlay,
-  Close
+  Close, 
+  Title, 
+  Symps
 };

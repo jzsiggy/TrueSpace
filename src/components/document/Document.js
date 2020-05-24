@@ -9,8 +9,8 @@ import { translate } from '../translator';
 
 import { withRouter } from 'react-router-dom';
 
-import { SectionContainer , NavContainer , Back , SymptomContainer , Overlay , Close } from './styles';
-import { Brown } from '../colors';
+import { SectionContainer , NavContainer , Back , SymptomContainer , Overlay , Close , Title, Symps } from './styles';
+import { Brown, Blue } from '../colors';
 
 class Document extends Component {
 
@@ -56,6 +56,10 @@ class Document extends Component {
           <Overlay />
           <SymptomContainer>
             <Close onClick={this.toggleSymptoms}>&#215;</Close>
+            <Title>
+              <Blue>Sintomas: </Blue>
+            </Title>
+            <Symps>
             {
               this.state.user.sintomas.map((symp, index) => {
                 return (
@@ -70,6 +74,7 @@ class Document extends Component {
                 )
               })
             }
+            </Symps>
           </SymptomContainer>
         </>
         }
