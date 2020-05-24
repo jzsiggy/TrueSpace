@@ -25,7 +25,8 @@ const SectionContainer = styled.div`
 const NavContainer = styled.div`
   position: fixed;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 95%;
   position: absolute;
   bottom: 12px;
@@ -47,8 +48,46 @@ const Back = styled.span`
   animation: ${fadeIn} 0.3s linear;
 `
 
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+`
+
+const SymptomContainer = styled.div`
+  position: fixed;
+  top: 40px;
+  bottom: 40px;
+  right: 40px;
+  left: 40px;
+  background-color: white;
+  z-index: 10;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  overflow-y: scroll;
+`
+
+const Close = styled.span`
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  font-weight: bold;
+  font-size: 4rem;
+`
+
 export {
   SectionContainer,
   NavContainer,
   Back,
+  SymptomContainer,
+  Overlay,
+  Close
 };

@@ -17,6 +17,7 @@ const Text = styled.div`
   width: 85%;
   font-weight: bold;
 `
+
 const Overlay = styled.div`
   position: fixed;
   top: 0;

@@ -3,6 +3,8 @@ import React , { Component } from 'react';
 import { Container , Num , Text , SymptomContainer , Overlay, Close } from './styles';
 import { Brown , Yellow , Blue } from '../../../colors';
 
+import { translate } from '../../../translator';
+
 class CancerType extends Component {
   
   state = {
@@ -34,14 +36,16 @@ class CancerType extends Component {
             <Close onClick={this.toggleSymptoms}>&#215;</Close>
           {
             this.props.symptoms.map((symp, index) => {
-              return <span 
-              key={index}
-              style={{
-                'margin':'10px 0',
-              }}
-              >
-                {symp}
-              </span>
+              return (
+                <span 
+                key={index}
+                style={{
+                  'margin':'10px 0',
+                }}
+                >
+                  {translate(symp)}
+                </span>
+              )
             })
           }
         </SymptomContainer>

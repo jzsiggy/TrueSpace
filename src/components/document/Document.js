@@ -5,16 +5,25 @@ import Header from './header/Header';
 import Basic from './basicInfo/Basic';
 import CovidProb from './probCovid/CovidProb';
 import CancerSymptoms from './cancerSymptoms/CancerSymptoms';
+import { translate } from '../translator';
 
 import { withRouter } from 'react-router-dom';
 
-import { SectionContainer , NavContainer , Back } from './styles';
+import { SectionContainer , NavContainer , Back , SymptomContainer , Overlay , Close } from './styles';
 import { Brown } from '../colors';
 
 class Document extends Component {
+
   state = {
+    symptoms: false,
     user: null,
   };
+
+  toggleSymptoms = () => {
+    this.setState({
+      symptoms: !this.state.symptoms,
+    });
+  }
 
   goHome = () => {
     this.props.history.push('/');
@@ -42,6 +51,29 @@ class Document extends Component {
       }}
       >
         {
+        this.state.symptoms &&
+        <>
+          <Overlay />
+          <SymptomContainer>
+            <Close onClick={this.toggleSymptoms}>&#215;</Close>
+            {
+              this.state.user.sintomas.map((symp, index) => {
+                return (
+                  <span 
+                  key={index}
+                  style={{
+                    'margin':'10px 0',
+                  }}
+                  >
+                    {translate(symp)}
+                  </span>
+                )
+              })
+            }
+          </SymptomContainer>
+        </>
+        }
+        {
           this.state.user ?
             <SectionContainer>
               <Header />
@@ -58,6 +90,7 @@ class Document extends Component {
               />
               <NavContainer>
                 <Back onClick={this.goHome}>&#8592;</Back>
+                <span onClick={this.toggleSymptoms}>Ver todos os sintomas</span>
               </NavContainer>
             </SectionContainer>
           :

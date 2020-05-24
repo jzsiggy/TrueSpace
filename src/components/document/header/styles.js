@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  height: 15%;
+  height: 12%;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -16,8 +16,8 @@ const Logo = styled.span`
 `
 
 const Blob = styled.div`
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 50px;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(/blob.svg);
