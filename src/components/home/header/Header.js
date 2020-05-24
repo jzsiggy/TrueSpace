@@ -3,6 +3,12 @@ import { Container, Blob, Logo } from './styles';
 import { Blue, Brown, Yellow } from '../../colors';
 
 class Header extends Component {
+  
+  goHome = () => {
+    console.log('yo')
+    this.props.history.push('/');
+  };
+  
   render () {
     return(
       <Container>
@@ -17,4 +23,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Header ;
